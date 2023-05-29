@@ -1,0 +1,39 @@
+﻿<Page x:Class="Frische_Seiten.Passwort"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Frische_Seiten"
+      mc:Ignorable="d" 
+      d:DesignHeight="598" d:DesignWidth="950"
+      Title="Passwort">
+
+    <Grid  Margin="0,0,0,0" >
+        <!--Hier ist es nicht gut geordnet-->
+        <Border x:Name="Backborder" DataContext="{Binding RelativeSource={RelativeSource AncestorType=Window}}" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="598" Margin="0,-3,0,0" VerticalAlignment="Top" Width="950" Background="#FF727272" CornerRadius="0,0,20,0">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Source="/Bilder/Frische_Seiten_Logo.png" Width="200"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                    <StackPanel Height="100" Width="100">
+                        <Label x:Name="bel" Content="Benutzername" Height="30" Width="150" Margin="0,0,0,0"/>
+                        <Label x:Name="frage" Content="beste schokolade" Height="30" Width="150" Margin="0,-30,0,0" Visibility="Hidden"/>
+                        <TextBox x:Name="antwort" TextWrapping="Wrap" Height="20" Width="100" Margin="0,0,0,0" Visibility="Hidden"/>
+                        <Label x:Name="pal" Content="Passwort" Height="30" Width="150" Margin="0,-20,0,0"/>
+                    </StackPanel>
+                    <StackPanel Height="100">
+                        <TextBox x:Name="Benutzername" TextWrapping="Wrap" Height="20" Width="150" Margin="0,5,0,0"/>
+                        <PasswordBox x:Name="passwort" Height="20" Width="150" Margin="0,5,0,0" />
+                    </StackPanel>
+
+                </StackPanel>
+                <Button x:Name="loginbutton" Content="Einlogen" Margin="180,-30,0,0" Height="20" Width="70" Click="Button_Click"/>
+                <Button x:Name="neuerpasswort" Content="Einlogen" Margin="180,-30,0,0" Height="20" Width="70" Click="neuerpasswort_Click" Visibility="Hidden"/>
+                <Button x:Name="Hilfe" Content="Passwort ändern" Margin="0,-30,0,0" Height="20" Width="100" Visibility="Hidden" Click="Hilfe_Click" />
+
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Page>

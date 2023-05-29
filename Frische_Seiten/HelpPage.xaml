@@ -1,0 +1,64 @@
+﻿<Page x:Class="Frische_Seiten.HelpPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Frische_Seiten"
+      mc:Ignorable="d" 
+      d:DesignHeight="598" d:DesignWidth="950"
+      Title="HelpPage">
+    <Grid>
+        <Border x:Name="Backborder" DataContext="{Binding RelativeSource={RelativeSource AncestorType=Window}}" Background="#203864" CornerRadius="0,0,20,0">
+            <ScrollViewer>
+                <WrapPanel>
+                    <StackPanel Margin="20,0,0,20">
+                        <Label x:Name="Label1" Content="Hilfe" Foreground="White" FontFamily="Arial Black" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <Label x:Name="Label2" Content="Wo sie ihre Fragen beantwortet bekommen" Foreground="White" FontFamily="Arial Black" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0"/>
+                        <Label x:Name="Label3" Content="Menu" Foreground="White" FontFamily="Arial Black" FontSize="26" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0"/>
+                        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left"  Margin="0,0,0,0" Orientation="Horizontal">
+                            <Image Source="/Bilder/Help_AppMenu.png" Height="200" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                            <TextBlock x:Name="Text1" Margin="20,0,0,0" Width="800" Foreground="White" FontFamily="Arial Black" TextWrapping="Wrap" Text="Beim öffnen der App werden Sie durch das Menü direkt zur Startseite geleitet. Sie können über die Menüleiste auch unsere anderen Seiten erreichen, wie zum Beispiel Über uns, die Hilfeseite oder den Admin-Bereich. Sie können auch direkt über die Leiste zwischen dem Dark- und Light-Modus wechseln."/>
+                        </StackPanel>
+                        <Label x:Name="Label4" Content="Start Seite" Foreground="White" FontFamily="Arial Black" FontSize="26" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0"/>
+                        <Image Source="/Bilder/Help_Menuganz.png" Height="200" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="Text2" Margin="0,20,0,0" Width="800" HorizontalAlignment="Left" Foreground="White" FontFamily="Arial Black" TextWrapping="Wrap" Text="Hier sehen Sie unsere Startseite."/>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Bilder/Help_MenuFilter.png" Height="200" HorizontalAlignment="Left" Margin="0,20,0,0"/>
+                            <StackPanel Margin="20,20,0,0">
+                                <TextBlock x:Name="Text3" Margin="0,0,0,10" TextWrapping="Wrap" Foreground="White" Text="Die App bietet Ihnen die Möglichkeit, bei der Auswahl des Friseurs verschiedene Filterfunktionen zu nutzen. Dazu gehören:"/>
+                                <TextBlock x:Name="Text4" TextWrapping="Wrap" Foreground="White" Text="     1)	Haartyp: Hier können Sie aus 4 verschiedenen Haartypen wählen: Glatt, Locken, Dicht und Glatze."/>
+                                <TextBlock x:Name="Text5" TextWrapping="Wrap" Foreground="White" Text="     2)	Preis: Hier können Sie eine Preisspanne angeben, indem Sie den Minimal- und Maximalpreis eingeben."/>
+                                <TextBlock x:Name="Text6" TextWrapping="Wrap" Foreground="White" Text="     3)	Bewertung: Mit dieser Funktion können Sie die Mindestanzahl an Sternen festlegen, die ein Friseur haben muss."/>
+                                <TextBlock x:Name="Text7" TextWrapping="Wrap" Foreground="White" Text="     4)	Bezirk: Hier können Sie die Bezirke eingeben, in denen Sie suchen möchten. Sie können die gefilterten Bezirke einzeln löschen oder alle auf einmal entfernen. "/>
+                                <TextBlock x:Name="Text8" Margin="0,10,0,0" TextWrapping="Wrap" Foreground="White" Text="Beachten Sie, dass alle Funktionen außer dem Haartyp optional sind und Sie auch nur einen Minimal- oder Maximalpreis eingeben können." />
+                            </StackPanel>   
+                        </StackPanel>
+                        <StackPanel>
+                            <Image Source="/Bilder/Help_sortier.png" Width="300" HorizontalAlignment="Left" Margin="0,20,0,0"/>
+                            <TextBlock x:Name="Text9" Margin="0,0,0,10" TextWrapping="Wrap" Foreground="White" Text="Eine weitere Funktion unserer App ist die Sortierfunktion. Diese ermöglicht es Ihnen, die Ergebnisse nach verschiedenen Kriterien zu sortieren. Folgende Sortieroptionen stehen zur Verfügung:"/>
+                            <TextBlock x:Name="Text10" TextWrapping="Wrap" Foreground="White" Text="     1)	Name A-Z: sortiert die Ergebnisse alphabetisch nach dem Namen des Friseurs."/>
+                            <TextBlock x:Name="Text11" TextWrapping="Wrap" Foreground="White" Text="     2)	Preis aufsteigend: sortiert die Ergebnisse nach dem Preis in aufsteigender Reihenfolge."/>
+                            <TextBlock x:Name="Text12" TextWrapping="Wrap" Foreground="White" Text="     3)	Preis absteigend: sortiert die Ergebnisse nach dem Preis in absteigender Reihenfolge."/>
+                            <TextBlock x:Name="Text13" TextWrapping="Wrap" Foreground="White" Text="     4)	Bewertung höchste bis niedrigste: sortiert die Ergebnisse nach der Bewertung des Friseurs von höchster bis niedrigster Bewertung."/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                            <Image Source="/Bilder/Help_kopierFunktion.png" Height="200"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,20,0,0">
+                            <Image Source="/Bilder/Help_erfolgreichKopiert.png" Height="50" HorizontalAlignment="Left"/>
+                            <TextBlock x:Name="Text15" HorizontalAlignment="Left" Margin="0,20,0,0" TextWrapping="Wrap" Width="800" Foreground="White" Text="Eine weitere Funktion unserer App ist die Kopierfunktion. Mit dieser Funktion können Sie den Namen des ausgewählten Friseurs, seine Adresse oder seine Telefonnummer in die Zwischenablage kopieren, um sie z.B. in eine Wegbeschreibung einzufügen oder an einen Freund zu senden. So können Sie schnell und einfach die Kontaktdaten eines Friseurs teilen oder speichern, ohne sie manuell abzuschreiben. "/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                            <Image Source="/Bilder/Help_LOGOINFO.png" Height="90" HorizontalAlignment="Left"/>
+                            <TextBlock x:Name="Text16" HorizontalAlignment="Left" Margin="0,20,0,0" TextWrapping="Wrap" Width="800" Foreground="White" Text="Clicken sie auf unser Logo, welches sich oben Links befindet, um direkt zu unserer Website geleitet zu werden."/>
+                        </StackPanel>
+
+
+                    </StackPanel>
+                </WrapPanel>
+            </ScrollViewer>
+        </Border>
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,111 @@
+﻿<Window x:Class="Frische_Seiten.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frische_Seiten"
+        mc:Ignorable="d"
+       Title="MainWindow" MinHeight="650" AllowsTransparency="True" MinWidth="1140" Height="650" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" Background= "Transparent" Icon="/Frische_Seiten_Logo.png">
+    <!--Die Resize-Funkion angepasst an border-->
+    <WindowChrome.WindowChrome>
+        <WindowChrome 
+        CaptionHeight="0"
+        ResizeBorderThickness="10" CornerRadius="20"/>
+    </WindowChrome.WindowChrome>
+    <!--Die  Kantenlicher (Sie wird noch mit dem MyBorder verbunden-->
+    <Window.Resources>
+        <Storyboard x:Key="borderColorAnimation">
+            <DoubleAnimation
+      Storyboard.TargetName="gradientStopOffset"
+      Storyboard.TargetProperty="Offset"
+      From="0" To="1" Duration="0:0:5" RepeatBehavior="1x" />
+        </Storyboard>
+    </Window.Resources>
+    <Grid>
+
+        <!--Main Borders die anordnung ist wichtig-->
+        <!--myBorder ist der Gesamte App-->
+        <Border x:Name="myBorder" DataContext="{Binding RelativeSource={RelativeSource AncestorType=Window}}" VerticalAlignment="Top" Background="#FF08184F" CornerRadius="20" BorderThickness="3">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" MappingMode="RelativeToBoundingBox" SpreadMethod="Pad" >
+                    <GradientStop x:Name="gradientStop1" Color="Blue" Offset="0" />
+                    <GradientStop x:Name="gradientStop2" Color="Blue" Offset="1" />
+                    <GradientStop x:Name="gradientStopOffset" Color="Black" Offset="0" />
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard Storyboard="{StaticResource borderColorAnimation}" />
+                </EventTrigger>
+            </Border.Triggers>
+        </Border>
+        <!--TopBoder ist wo logo und die Dreiknöpfe sind-->
+        <Border x:Name="topBorder" CornerRadius="20,20,0,0" Height="50" VerticalAlignment="Top" MouseLeftButtonDown="move" Background="Black" Margin="2,2,2,0"/>
+        <!--nebenBorder ist der Menu-->
+        <Border x:Name="nebenBorder" Width="140" Margin="2,51,0,2" HorizontalAlignment="Left" CornerRadius="0,0,0,20" Background="#FF1A1919">
+            <Grid >
+                <!--Menu-->
+                <Polygon x:Name="menupolygon" Points="20,0,120,0,140,50,120,100,20,100" StrokeThickness="2" Fill="#FF08758C" VerticalAlignment="Top" Margin="0,40" Visibility="Visible" Stroke="Black"/>
+                <Grid Width="60" Height="60" VerticalAlignment="Top" Margin="20,60" MouseLeftButtonDown="Menub" Cursor="Hand">
+                    <Image x:Name="menupicblack" Source="/Bilder/menupicblack.png" Visibility="Hidden"/>
+                    <Image x:Name="menupicewhite" Source="/Bilder/menupicwhite.png" />
+                </Grid>
+                <!--ÜBER UNS-->
+                <Polygon x:Name="teampolygon" Points="20,0,120,0,140,50,120,100,20,100" StrokeThickness="2" Fill="#FF08758C" VerticalAlignment="Top" Margin="0,165" Visibility="Visible" Stroke="Black"/>
+                <Grid Width="70" Height="100" VerticalAlignment="Top" Margin="0,170" MouseLeftButtonDown="Teamb" Cursor="Hand">
+                    <Image x:Name="teampicblack" Source="/Bilder/teampicblack.png" Visibility="Hidden" VerticalAlignment="Top"/>
+                    <Image x:Name="teampicwhite" Source="/Bilder/teampicwhite.png" VerticalAlignment="Top"/>
+                    <Label x:Name="teamtxt" Content="über uns" Width="70" Margin="0,20" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="White" FontFamily="Arial Black" FontSize="12"/>
+                </Grid>
+                <!--Help-->
+                <Polygon x:Name="helppolygon" Points="20,0,120,0,140,50,120,100,20,100" StrokeThickness="2" Fill="#FF08758C" VerticalAlignment="Top" Margin="0,285,0,0" Visibility="Visible" Stroke="Black" Height="103"/>
+                <Grid Width="70" Height="69" VerticalAlignment="Top" Margin="35,300,35,0" MouseLeftButtonDown="Helpb" Cursor="Hand">
+                    <Image x:Name="helppicblack" Source="/Bilder/helpschwarz.png" Visibility="Hidden" VerticalAlignment="Top"/>
+                    <Image x:Name="helppicwhite" Source="/Bilder/helpweiss.png" VerticalAlignment="Top" Height="69"/>
+                </Grid>
+                <!--Admin-->
+                <Polygon x:Name="adminpolygon" Points="20,0,120,0,140,50,120,100,20,100" StrokeThickness="2" Fill="#FFD00000" VerticalAlignment="Bottom" Margin="0,82" Visibility="Hidden" Stroke="Black"/>
+                <Grid Width="70" Height="100" VerticalAlignment="Bottom" Margin="0,80" MouseLeftButtonDown="Adminb" Cursor="Hand">
+                    <Image x:Name="adminpicwhite" Source="/Bilder/admin.png" VerticalAlignment="Top"/>
+                    <Image x:Name="adminpicblack"  Source="/Bilder/male-admin.png" Visibility="Hidden" VerticalAlignment="Top"/>
+                    <Label x:Name="admintxt" Content="Admin" Width="50" Margin="0,10" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="{x:Null}" Foreground="White" FontFamily="Arial Black" FontSize="12"/>
+                </Grid>
+                <!--Light & Darkmode-->
+                <StackPanel Orientation="Horizontal" Width="60" Margin="0,20" VerticalAlignment="Bottom">
+                    <Border Width="60" Height="30" CornerRadius="10"  Background="#FF12F12B"/>
+                    <Border x:Name="Nightmode" Width="40" Height="30" Background="Black" CornerRadius="10" MouseLeftButtonDown="nightButton" Margin="-80,0,5,0" Visibility="Hidden" Cursor="Hand">
+                        <Image Source="/Bilder/light-mode-4562903.png" />
+                    </Border>
+                    <Border Height="30" Width="40" Margin="-40,0,0,0" CornerRadius="10" x:Name="Lightmode" BorderBrush="{x:Null}" Background="Black" MouseLeftButtonDown="lightButton" Cursor="Hand">
+                        <Image Source="/Bilder/dark-mode.png" />
+                    </Border>
+                </StackPanel >
+            </Grid>
+        </Border>
+        <!--die Drei knöpfe-->
+        <Border CornerRadius="20" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="20,15" MouseLeftButtonDown="Schließen" Background="#FFF75B5B"/>
+        <Border CornerRadius="20" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="50,15" MouseLeftButtonDown="Minmax" Background="#FFF7FFCD"/>
+        <Border CornerRadius="20" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="80,15" MouseLeftButtonDown="hide" Background="#FFD4D4D4"/>
+        <!--Logo-->
+        <Grid>
+            <Border Width="170" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,5,0,0" Background="White" CornerRadius="10" MouseLeftButtonDown="Border_MouseLeftButtonDown" Cursor="Hand">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="10,0">
+                    <Image Source="/Bilder/Frische_Seiten_Logo.png" Height="40"/>
+                    <Label Content="Frische Seiten" VerticalAlignment="Center" FontFamily="Arial Black" Margin="-5,0"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <!--main Fram-->
+        <Frame x:Name="mainfram" Margin="143,50,2,2" NavigationUIVisibility="Hidden"/>
+        <!--Der Schatten zwischen Menu und Pages-->
+        <Border x:Name="nebenBorderschatten" Width="10" Margin="139,50,0,-20" HorizontalAlignment="Left" CornerRadius="0,0,0,20">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="1,1" MappingMode="RelativeToBoundingBox">
+                    <GradientStop Color="#BF000000" Offset="1"/>
+                    <GradientStop Color="Transparent" Offset="0"/>
+                    <GradientStop Color="#3FA2A2A2" Offset="0.363"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+    </Grid>
+</Window>

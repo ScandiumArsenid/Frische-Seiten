@@ -1,0 +1,54 @@
+﻿<Page x:Class="Frische_Seiten.TeamPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Frische_Seiten"
+      mc:Ignorable="d" 
+       d:DesignHeight="598" d:DesignWidth="950"
+      Title="TeamPage">
+
+    <Grid>
+        <Border x:Name="Backborder" DataContext="{Binding RelativeSource={RelativeSource AncestorType=Window}}" Background="#203864" CornerRadius="0,0,20,0">
+            <ScrollViewer>
+                <WrapPanel>
+                    <StackPanel>
+                        <StackPanel Height="430">
+                            <TextBlock x:Name="Text1" Text="Team „Frische Seiten“" Foreground="White" FontFamily="Bahnschrift" FontSize="36" Width="350" HorizontalAlignment="Left" Margin="20,10" Height="40" VerticalAlignment="Top"/>
+                            <TextBlock x:Name="Text2" Text="Die Erstellungsgeschichte unseres Produktes" Foreground="White" FontFamily="Arial Black" Margin="20,0,0,0" Height="40" VerticalAlignment="Top" FontSize="17"/>
+                            <TextBlock x:Name="Text3" Text="Die Entscheidung, eine Friseur-App zu entwickeln, entstand aus einer Team-Abstimmung. Von den vielen Ideen, die wir hatten, wie zum Beispiel eine verbesserte Version von Mario oder eine Webseite für Kochrezepte, erschien uns eine App, die ein großes Problem löst, als die beste Wahl für unser Projekt." Foreground="White" FontFamily="Arial Black" Margin="20,0,0,0" VerticalAlignment="Top" FontSize="14" TextWrapping="Wrap"/>
+                            <TextBlock x:Name="Text4" Text="Um was geht es in unserer App?" Foreground="White" FontFamily="Arial Black" Margin="20,20,0,0" VerticalAlignment="Top" FontSize="17"/>
+                            <TextBlock x:Name="Text5" Text="Du hast sicher schon einmal die Erfahrung gemacht, dass es schwierig ist, den richtigen Friseur zu finden. Vielleicht hast du Schwierigkeiten, einen Friseur in deiner Nähe zu finden, der deinen Haartypen gut versteht, oder du musst immer wieder einen neuen Friseur suchen, weil der letzte deine Erwartungen nicht erfüllt hat. Deshalb haben wir ein Produkt entwickelt, das dir dabei hilft, den perfekten Friseur für deine Bedürfnisse zu finden." Foreground="White" FontFamily="Arial Black" Margin="20,10,0,0" VerticalAlignment="Top" FontSize="14" TextWrapping="Wrap"/>
+                            <TextBlock x:Name="Text6" Text="Unser Produkt bietet die Möglichkeit, Friseure zu filtern, die deinen Haartypen gut verstehen und deinen Preisvorstellungen entsprechen. Du kannst auch die Bewertungen von Friseuren einsehen und Friseure, deren Bewertungen deine Vorstellungen nicht erfüllen, durch eine Filterungsfunktion ausschließen. Auf diese Weise kannst du sicher sein, dass du den Friseur findest, der perfekt zu dir passt." Foreground="White" FontFamily="Arial Black" Margin="20,10,0,0" VerticalAlignment="Top" FontSize="14" TextWrapping="Wrap"/>
+                            <TextBlock x:Name="Text7" Text="Wer Sind wir?" Foreground="White" FontFamily="Arial Black" Margin="20,10,0,0" Height="40" VerticalAlignment="Top" FontSize="17"/>
+                        </StackPanel>                       
+
+                        <StackPanel Margin="0,0,0,20" Orientation="Horizontal" HorizontalAlignment="Center"> 
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="400" Width="250">
+                                <StackPanel>
+                                    <Image Width="250" Height="300" VerticalAlignment="Top" Margin="0,20,0,0" Source="/Bilder/yazan.jpeg" />
+                                    <Label x:Name="name1" Content="yazan Kasem(TL)" Margin="0,0,0,0" FontFamily="Arial Black" FontSize="17" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold"/>
+                                    <TextBlock x:Name="aufgabe1" Text="Aufgabe: Design der App" Margin="10,0,0,0" FontFamily="Arial Black" FontSize="12" VerticalAlignment="Bottom" Foreground="White" HorizontalAlignment="Left" Width="185" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="400" Width="250" Margin="20,0,0,0">
+                                <StackPanel>
+                                    <Image Width="250" Height="300" VerticalAlignment="Top" Margin="0,20,0,0" Source="/Bilder/tobi.jpeg" />
+                                    <Label x:Name="name2" Content="Tobias Sarmiento" Margin="0,0,0,0" FontFamily="Arial Black" FontSize="17" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold"/>
+                                    <TextBlock x:Name="aufgabe2" Text="Aufgabe: Programmieren" Margin="10,0,0,0" FontFamily="Arial Black" FontSize="12" VerticalAlignment="Bottom" Foreground="White" HorizontalAlignment="Left" Width="185" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="400" Width="250" Margin="20,0,0,0">
+                                <StackPanel>
+                                    <Image Width="250" Height="300" VerticalAlignment="Top" Margin="0,20,0,0" Source="/Bilder/yassin.jpeg" />
+                                    <Label x:Name="name3" Content="yassin Akrout" Margin="0,0,0,0" FontFamily="Arial Black" FontSize="17" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold"/>
+                                    <TextBlock x:Name="aufgabe3" Text="Aufgabe: Datenbank erstellen" Margin="10,0,0,0" FontFamily="Arial Black" FontSize="12" VerticalAlignment="Bottom" Foreground="White" HorizontalAlignment="Left" Width="185" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </WrapPanel>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Page>
